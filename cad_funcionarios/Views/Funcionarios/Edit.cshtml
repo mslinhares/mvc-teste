@@ -1,7 +1,7 @@
 ﻿@model cad_funcionarios.Models.Funcionario
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
 <h1>Edit</h1>
@@ -41,6 +41,16 @@
     </div>
 </div>
 
+<script>
+    $(function () {
+        $('#currency').maskMoney({
+            /*prefix: 'R$ ',*/
+            thousands: ',', decimal: '.',
+            allowNegative: true,
+            affixesStay: true
+        });
+    })
+</script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

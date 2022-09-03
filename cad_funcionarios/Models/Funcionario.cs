@@ -18,7 +18,6 @@ namespace cad_funcionarios.Models
         public DateTime DataNascimento { get; set; }
         [DisplayName("Salário")]
         [DataType(DataType.Currency)]
-        [RegularExpression(@"^\d+([.,]\d{0,2})?$")]
         [Required(ErrorMessage = "O salário é de preenchimento obrigatório.")]
         public decimal Salario { get; set; }
         [Required(ErrorMessage = "As atividades são de preenchimento obrigatório.")]

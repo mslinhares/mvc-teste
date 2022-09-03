@@ -259,11 +259,3 @@ C:\workspace\mvc-teste\cad_funcionarios\obj\Debug\net6.0\refint\cad_funcionarios
 C:\workspace\mvc-teste\cad_funcionarios\obj\Debug\net6.0\cad_funcionarios.pdb
 C:\workspace\mvc-teste\cad_funcionarios\obj\Debug\net6.0\cad_funcionarios.genruntimeconfig.cache
 C:\workspace\mvc-teste\cad_funcionarios\obj\Debug\net6.0\ref\cad_funcionarios.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\System.Web.Mvc.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\System.Web.Razor.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\System.Web.Helpers.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\System.Web.WebPages.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
-C:\workspace\mvc-teste\cad_funcionarios\bin\Debug\net6.0\pt-br\System.Web.Mvc.resources.dll
