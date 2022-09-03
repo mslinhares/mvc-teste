@@ -9,7 +9,7 @@
 <h4>Funcionario</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Salario" class="control-label"></label>
-                <input asp-for="Salario" id="currency" class="form-control" />
+                <input asp-for="Salario" class="form-control" />
                 <span asp-validation-for="Salario" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -33,26 +33,13 @@
                 <span asp-validation-for="Atividades" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary mt-2" />
+                <input type="submit" value="Criar" class="btn btn-primary mt-2" />
+                <a class="btn btn-warning mt-2" asp-action="Index">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-<script>
-    $(function () {
-        $('#currency').maskMoney({
-            /*prefix: 'R$ ',
-            thousands: '.', decimal: ',',*/
-            allowNegative: true,
-            affixesStay: true
-        });
-    })
-</script>
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

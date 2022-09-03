@@ -4,17 +4,17 @@
     ViewData["Title"] = "Cadastro de Funcionários";
 }
 
-<h1 class="d-flex justify-content-center m-5">Cadastro de Funcionários</h1>
-<div class="d-flex justify-content-between flex-wrap">
+<div class="d-flex justify-content-between flex-wrap align-items-center">
 <p>
-    <input type="button" value="Cadastrar Funcionário" onclick="location.href='@Url.Action("Create", "Funcionarios")'" />
+    <input type="button" class="btn btn-primary" value="Cadastrar Funcionário" onclick="location.href='@Url.Action("Create", "Funcionarios")'" />
 </p>
 <p>
     @using(Html.BeginForm())
     {
-            <a>Nome do funcionário: </a>
+        <a>Nome do funcionário: </a>
         @Html.TextBox("SearchString")
-        <input type="submit" value="Pesquisar" />
+        <input type="submit" class="btn btn-secondary btn-sm" value="Pesquisar" />
+        <input type="button" class="btn btn-light btn-sm" value="Limpar" onclick="location.href='@Url.Action("Index", "Funcionarios")'" />
     }
 </p>
 </div>
@@ -49,20 +49,20 @@
                 @Html.DisplayFor(modelItem => item.Salario)
             </td>
             <td>
-                    @if (item.Atividades.Length >= 150)
-                    {
-                        var display = item.Atividades.Substring(0, 150) + "...";
-                        <text>@display</text>
-                    }
-                    else
-                    {
-                        <text>@Html.DisplayFor(modea => item.Atividades)</text>
-                    }
+                @if (item.Atividades.Length >= 150)
+                {
+                    var display = item.Atividades.Substring(0, 150) + "...";
+                    <text>@display</text>
+                }
+                else
+                {
+                    <text>@Html.DisplayFor(modea => item.Atividades)</text>
+                }
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <td class="d-flex flex-wrap justify-content-around">
+                <a class="btn btn-light btn-sm m-1" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a class="btn btn-light btn-sm m-1" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                <a class="btn btn-danger btn-sm m-1" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
             </td>
         </tr>
 }
