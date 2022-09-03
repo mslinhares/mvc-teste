@@ -1,0 +1,70 @@
+﻿@model IEnumerable<cad_funcionarios.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Cadastro de Funcionários";
+}
+
+<h1 class="d-flex justify-content-center m-5">Cadastro de Funcionários</h1>
+<div class="d-flex justify-content-between flex-wrap">
+<p>
+    <input type="button" value="Cadastrar Funcionário" onclick="location.href='@Url.Action("Create", "Funcionarios")'" />
+</p>
+<p>
+    @using(Html.BeginForm())
+    {
+            <a>Nome do funcionário: </a>
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Pesquisar" />
+    }
+</p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Atividades)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salario)
+            </td>
+            <td>
+                    @if (item.Atividades.Length >= 150)
+                    {
+                        var display = item.Atividades.Substring(0, 150) + "...";
+                        <text>@display</text>
+                    }
+                    else
+                    {
+                        <text>@Html.DisplayFor(modea => item.Atividades)</text>
+                    }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
