@@ -14,7 +14,7 @@ namespace cad_funcionarios.Models
         [DisplayName("Data de nascimento")]
         [Required(ErrorMessage = "A data de nascimento é de preenchimento obrigatório.")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime DataNascimento { get; set; }
         [DisplayName("Salário")]
         [DataType(DataType.Currency)]
